@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  tunel:
+    container_name: tunel
+    image: docker.io/cloudflare/cloudflared
+    restart: unless-stopped
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=$TOKEN
+    # command: tunnel --url ssh://10.0.1.95
